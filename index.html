@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maya Hart | Personal Portfolio</title>
+    <meta
+      name="description"
+      content="A personal portfolio for sharing photographs, stories, and everyday journal entries."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/app.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <nav class="nav container">
+          <div class="brand">Maya<span>Hart</span></div>
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#stories">Stories</a>
+          </div>
+          <a href="#stories" class="nav-btn">Write a story</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero container" id="about">
+          <div class="hero-visual" aria-label="Portfolio preview image">
+            <div class="visual-card">
+              <div class="photo-badge">Latest story</div>
+              <input id="profileImageUpload" type="file" accept="image/*" hidden />
+              <img
+                id="profileImage"
+                class="portrait-frame"
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80"
+                alt="Portrait of the portfolio owner"
+                title="Click to change your profile photo"
+              />
+              <div class="mini-note">
+                <span>Sunrise walk</span>
+                <strong>Finding calm in the city</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-copy">
+            <p class="eyebrow">Photographer • Writer • Dreamer</p>
+            <div class="welcome-banner">
+              <span class="welcome-tag">Welcome to DISII Platform</span>
+            </div>
+            <h1>We create memories, celebrate moments, and live them together.</h1>
+            <p class="lead">
+              I’m Maya, a visual storyteller capturing joy, small victories,
+              and meaningful memories through photos and personal journaling.
+            </p>
+            <div class="cta-row">
+              <a href="#gallery" class="primary-btn">View gallery</a>
+              <a href="#stories" class="secondary-btn">Read journal</a>
+            </div>
+            <div class="stats">
+              <div class="stat-card">
+                <strong>120+</strong>
+                <span>Captured photos</span>
+              </div>
+              <div class="stat-card">
+                <strong>36</strong>
+                <span>Stories written</span>
+              </div>
+              <div class="stat-card">
+                <strong>8</strong>
+                <span>Places explored</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section container" id="gallery">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Gallery</p>
+              <h2>My favorite frames</h2>
+            </div>
+            <label class="upload-btn">
+              <input id="galleryUpload" type="file" accept="image/*" multiple />
+              Add photos
+            </label>
+          </div>
+          <div id="galleryGrid" class="gallery-grid" aria-live="polite"></div>
+        </section>
+
+        <section class="section container" id="stories">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Journal</p>
+              <h2>Daily stories & posts</h2>
+            </div>
+          </div>
+
+          <div class="journal-layout">
+            <form id="storyForm" class="story-form">
+              <h3>Write a new story</h3>
+              <label>
+                <span>Title</span>
+                <input id="storyTitle" type="text" placeholder="A quiet Sunday morning" required />
+              </label>
+
+              <div class="inline-fields">
+                <label>
+                  <span>Date</span>
+                  <input id="storyDate" type="date" required />
+                </label>
+                <label>
+                  <span>Mood</span>
+                  <input id="storyMood" type="text" placeholder="Happy, reflective..." />
+                </label>
+              </div>
+
+              <label>
+                <span>Story</span>
+                <textarea
+                  id="storyContent"
+                  rows="6"
+                  placeholder="Tell me about your day, a favorite memory, or a moment that felt meaningful..."
+                  required
+                ></textarea>
+              </label>
+
+              <label class="story-photo-label">
+                <span>Attach a photo</span>
+                <input id="storyImageInput" type="file" accept="image/*" />
+              </label>
+
+              <button type="submit" id="saveStoryBtn" class="primary-btn wide-btn">Publish story</button>
+            </form>
+
+            <div class="story-list-wrapper">
+              <div id="storyList" class="story-list" aria-live="polite"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Made with love, light, and a little bit of wonder.</p>
+      </footer>
+    </div>
+  </body>
+</html>
